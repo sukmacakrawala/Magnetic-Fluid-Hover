@@ -1,0 +1,57 @@
+:root {
+  --bg-color: #0f172a;
+  --btn-color: #38bdf8;
+}
+
+body {
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  /* Filter diterapkan di pembungkus agar elemen di dalamnya saling tarik-menarik */
+  filter: url("#goo");
+}
+
+.gooey-button {
+  position: relative;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--btn-color);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.bubble {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25px;
+  height: 25px;
+  background-color: var(--btn-color);
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+/* Animasi Butiran saat Hover */
+.gooey-button:hover .bubble:nth-child(1) {
+  transform: translate(-80px, -40px) scale(1.5);
+}
+.gooey-button:hover .bubble:nth-child(2) {
+  transform: translate(60px, -45px) scale(1.2);
+}
+.gooey-button:hover .bubble:nth-child(3) {
+  transform: translate(-70px, 35px) scale(1.8);
+}
+.gooey-button:hover .bubble:nth-child(4) {
+  transform: translate(50px, 30px) scale(1.4);
+}
